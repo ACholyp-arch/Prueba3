@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Oups';
+  src: url('fonts/Oups.woff2') format('woff2'),
+       url('fonts/Oups.ttf') format('truetype');
+}
 body {
   margin: 0;
   padding: 0;
@@ -11,7 +16,9 @@ body {
   animation: fadein 2s ease-in;
 }
 .card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.8); /* negro semitransparente */
+  color: #FFD700; /* amarillo */
+  border: 3px solid #FF0000; /* rojo */
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
@@ -30,8 +37,8 @@ input {
 }
 
 button {
-  background: #7d5fff;
-  color: white;
+  background: #FF0000; /* rojo */
+  color: #fff;
   border: none;
   padding: 0.7rem 1.5rem;
   border-radius: 10px;
@@ -40,7 +47,8 @@ button {
 }
 
 button:hover {
-  background: #5b38d6;
+  background: #FFD700; /* amarillo */
+  color: #000;
   transform: scale(1.05);
 }
 
