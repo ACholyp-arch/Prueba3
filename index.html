@@ -14,19 +14,22 @@
     Tu navegador no soporta audio.
   </audio>
 
-  <div class="card animar">
-    <h1>🎟️ Vale de Invitación</h1>
-    <p>Ingresa tu nombre para verificar tus pases:</p>
-    
-    <input type="text" id="nombreInvitado" placeholder="Escribe tu nombre">
-    <button onclick="verificarInvitado()">Verificar</button>
-    
-    <p id="resultado"></p>
+<div class="card animar">
+  <h1>🎟️ Vale de Invitación</h1>
+  <p>Ingresa tu nombre para verificar tus pases:</p>
+  
+  <input type="text" id="nombreInvitado" placeholder="Escribe tu nombre">
+  <button onclick="verificarInvitado()">Verificar</button>
+  
+  <p id="resultado"></p>
+  
+  <!-- Aquí aparecerá la imagen personalizada -->
+  <img id="imagenVale" src="" alt="Vale personalizado" style="display:none; max-width:100%; margin-top:1rem; border-radius:10px;">
+  
+  <button onclick="descargarPDF()">⬇️ Descargar Vale</button>
+</div>
 
-    <button onclick="descargarPDF()">⬇️ Descargar Vale</button>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
