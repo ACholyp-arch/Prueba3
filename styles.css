@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/1/1c/Alice_par_John_Tenniel_09.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: fadein 2s ease-in;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: flotar 4s infinite ease-in-out;
+}
+
+input {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  width: 80%;
+}
+
+button {
+  background: #7d5fff;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5b38d6;
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

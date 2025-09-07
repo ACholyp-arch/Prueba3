@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vale de Invitación</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <audio id="musica" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-dreams.mp3" type="audio/mp3">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="card animar">
+    <h1>🎟️ Vale de Invitación</h1>
+    <p>Ingresa tu nombre para verificar tus pases:</p>
+    
+    <input type="text" id="nombreInvitado" placeholder="Escribe tu nombre">
+    <button onclick="verificarInvitado()">Verificar</button>
+    
+    <p id="resultado"></p>
+
+    <button onclick="descargarPDF()">⬇️ Descargar Vale</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
