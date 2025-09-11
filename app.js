@@ -1,8 +1,8 @@
 // Lista de invitados con pases e imagen personalizada
 const invitados = {
-  "Ana Pérez": { pases: 2, imagen: "img/vale_ana.png" },
-  "Luis Gómez": { pases: 3, imagen: "img/vale_luis.png" },
-  "María López": { pases: 1, imagen: "img/vale_maria.png" },
+  "Ana Pérez": { pases: 2, imagen: "Vale3.png" },
+  "Luis Gómez": { pases: 3, imagen: "Vale4.png" },
+  "María López": { pases: 1, imagen: "Vale2.png" },
   "Carlos Ramírez": { pases: 4, imagen: "img/vale_carlos.png" }
 };
 
@@ -23,21 +23,21 @@ function verificarInvitado() {
   }
 }
 
-function descargarPDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+// 👉 Descargar la imagen mostrada (ya no PDF)
+function descargarVale() {
+  const img = document.getElementById("imagenVale");
 
-  const nombre = document.getElementById("nombreInvitado").value.trim();
-  let texto = "Vale de Invitación\n\n";
-
-  if (invitados[nombre]) {
-    texto += `${nombre}, tienes ${invitados[nombre].pases} pases incluidos.`;
-  } else {
-    texto += "Nombre no encontrado en la lista.";
+  if (!img.src || img.style.display === "none") {
+    alert("Primero verifica tu nombre para mostrar el vale.");
+    return;
   }
 
-  doc.text(texto, 20, 30);
-  doc.save("vale_invitacion.pdf");
+  const a = document.createElement("a");
+  a.href = img.src;
+  a.download = "vale_invitacion.png"; // Nombre del archivo descargado
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 }
 
 // Confetti
