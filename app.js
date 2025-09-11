@@ -8,7 +8,6 @@ function normalizarTexto(texto) {
 }
 
 // Lista de invitados con pases e imagen personalizada
-// Las claves ya están normalizadas (sin tildes, minúsculas)
 const invitados = {
   "ana perez": { pases: 2, imagen: "Vale3.png" },
   "luis gomez": { pases: 3, imagen: "Vale4.png" },
@@ -24,18 +23,17 @@ function verificarInvitado() {
 
   if (invitados[nombreNormalizado]) {
     resultado.textContent = `✅ ${nombreInput}, tienes ${invitados[nombreNormalizado].pases} pases incluidos.`;
-    // Se usa ruta relativa correcta
     imagenVale.src = "./" + invitados[nombreNormalizado].imagen;
     imagenVale.style.display = "block";
 
-    lanzarConfetti();
+    lanzarConfetti(); // 🎉
   } else {
     resultado.textContent = "❌ Nombre no encontrado en la lista.";
     imagenVale.style.display = "none";
   }
 }
 
-// Descargar la imagen mostrada usando la misma ruta que se cargó
+// Descargar la imagen mostrada usando su nombre original
 function descargarVale() {
   const img = document.getElementById("imagenVale");
 
@@ -49,7 +47,7 @@ function descargarVale() {
 
   const a = document.createElement("a");
   a.href = img.src;
-  a.setAttribute("download", nombreArchivo); // descarga con el mismo nombre del archivo
+  a.setAttribute("download", nombreArchivo); // descarga con el nombre real
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
