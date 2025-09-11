@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html>
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -14,22 +12,39 @@
     Tu navegador no soporta audio.
   </audio>
 
-<div class="card animar">
-  <h1>🎟️ Vale de Invitación</h1>
-  <p>Ingresa tu nombre para verificar tus pases:</p>
-  
-  <input type="text" id="nombreInvitado" placeholder="Escribe tu nombre">
-  <button onclick="verificarInvitado()">Verificar</button>
-  
-  <p id="resultado"></p>
-  
-  <!-- Aquí aparecerá la imagen personalizada -->
-  <img id="imagenVale" src="" alt="Vale personalizado" style="display:none; max-width:100%; margin-top:1rem; border-radius:10px;">
-  
-  <button onclick="descargarPDF()">⬇️ Descargar Vale</button>
-</div>
+  <div class="card animar">
+    <h1>🎟️ Vale de Invitación</h1>
+    <p>Ingresa tu nombre para verificar tus pases:</p>
+    
+    <input type="text" id="nombreInvitado" placeholder="Escribe tu nombre">
+    <button onclick="verificarInvitado()">Verificar</button>
+    
+    <p id="resultado"></p>
+    
+    <!-- Aquí aparecerá la imagen personalizada -->
+    <img id="imagenVale" src="" alt="Vale personalizado" 
+         style="display:none; max-width:100%; margin-top:1rem; border-radius:10px;">
+    
+    <button onclick="descargarVale()">⬇️ Descargar Vale</button>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <script>
+    function descargarVale() {
+      const img = document.getElementById("imagenVale");
+      if (!img.src || img.style.display === "none") {
+        alert("Primero verifica tu nombre para mostrar el vale.");
+        return;
+      }
+
+      const a = document.createElement("a");
+      a.href = img.src;
+      a.download = "Vale_XV_Chepe.jpg"; // nombre del archivo descargado
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
