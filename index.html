@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Música de fondo -->
   <audio id="musica" autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-dreams.mp3" type="audio/mp3">
     Tu navegador no soporta audio.
@@ -28,23 +29,9 @@
     <button onclick="descargarVale()">⬇️ Descargar Vale</button>
   </div>
 
+  <!-- Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-  <script>
-    function descargarVale() {
-      const img = document.getElementById("imagenVale");
-      if (!img.src || img.style.display === "none") {
-        alert("Primero verifica tu nombre para mostrar el vale.");
-        return;
-      }
-
-      const a = document.createElement("a");
-      a.href = img.src;
-      a.download = "Vale_XV_Chepe.jpg"; // nombre del archivo descargado
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    }
-  </script>
+  <!-- Lógica de invitados y descarga -->
   <script src="app.js"></script>
 </body>
 </html>
